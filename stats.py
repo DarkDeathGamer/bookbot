@@ -1,20 +1,23 @@
 def sort_on(items):
     return items["num"]
 
+
 def get_word_count(text):
     return len(text.split())
+
 
 def get_char_count(text):
     lower = text.lower()
     count = {}
 
     for char in lower:
-        if not (char in count):
+        if char not in count:
             count[char] = 1
         else:
             count[char] += 1
-    
+
     return count
+
 
 def sort_dict(counts):
     count_list = []
