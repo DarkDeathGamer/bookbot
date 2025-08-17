@@ -1,6 +1,7 @@
 from stats import get_word_count
 from stats import get_char_count
 from stats import sort_dict
+import sys
 
 def get_book_text(book_dir: str) -> str:
     with open(book_dir) as f:
@@ -20,7 +21,10 @@ def print_stats(text):
 
 
 def main():
-    book_dir = "./books/frankenstein.txt"
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    book_dir = sys.argv[1]
     text = get_book_text(book_dir)
     print_stats(text)
 
